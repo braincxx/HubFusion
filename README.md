@@ -1,6 +1,6 @@
 <div align="center">
     <a href="https://hubfusion.pro/">
-        <img src="source/assets/HubFusion_light-1-1024x244.png" width="520" alt="hubfusion">
+        <img src="assets/HubFusion_light-1-1024x244.png" width="520" alt="hubfusion">
     </a>
 </div>
 
@@ -19,5 +19,5 @@
 ## ⚙️ Архитектура системы
 
 <div align="center" style="margin-top:20px;margin-bottom:20px;">
-    <img src="source/assets/1. main.png" width="1000"/>
+    <img src="assets/1. main.png" width="1000"/>
 </div>
