@@ -1,0 +1,7 @@
+gradio==4.44.0
+ollama==0.3.3
+asyncpg==0.29.0
+psycopg2-binary==2.9.9
+python-dotenv==1.0.1
+transformers==4.44.2
+torch==2.4.1
