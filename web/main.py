@@ -336,13 +336,20 @@ block_css = """
 
 """
 
+title_markdown = ("""
+<img src="https://hubfusion.pro/wp-content/uploads/2024/08/HubFusion_light-1-1024x244.png" alt="HubFusion" width="150" height="120"/>
+
+[[Project Page](https://hubfusion.pro)]
+[[Code](https://github.com/braincxx/HubFusion)] 
+""")
+
 def build_interface(cur_dir=None, concurrency_count=10):
     
     textbox = gr.Textbox(show_label=False, placeholder="Enter text and press ENTER", container=False)
     
     
     with gr.Blocks(css="div#component-4.block.svelte-12cmxck {height: 500px;}", fill_height=True) as demo:
-        gr.Markdown("HubFusion")
+        gr.Markdown(title_markdown)
         state = gr.State()
         # Create tabs
         with gr.Tab("Чат", elem_id="tab-chat"):
@@ -475,5 +482,5 @@ def build_interface(cur_dir=None, concurrency_count=10):
 # Run the Gradio app
 if __name__ == "__main__":
     interface = build_interface()
-    interface.launch()
+    interface.launch(allowed_paths=["/"])
     

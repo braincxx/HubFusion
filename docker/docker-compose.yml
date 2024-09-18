@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  vector_store:
+    image: pgvector/pgvector:pg16
+    container_name: pgvector_db
+    ports:
+      - "${VECTOR_DB_PORT}:5432"
+    environment:
+      - POSTGRES_DB=${VECTOR_DB_DATABASE}
+      - POSTGRES_USER=${VECTOR_DB_USER}
+      - POSTGRES_PASSWORD=${VECTOR_DB_PASSWORD}
+    volumes:
+      - pgvector_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]  # Enables GPU support
+    volumes:
+      - ../ollama:/root/.ollama  # Mounts the volume
+    ports:
+      - "11435:11434"  # Maps the port
+
+
+
+volumes:
+  pgvector_data:
